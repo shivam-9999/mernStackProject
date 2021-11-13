@@ -152,3 +152,45 @@ function Login() {
   );
 }
 export default Login;
+
+
+
+
+
+
+// {
+//    "topics": [
+//     {
+//       "id": "0",
+//       "name": "technology",
+//       "posts": [
+//         {
+//           "name": "Car",
+//           "picture": "https://gomechanic.in/blog/wp-content/uploads/2020/11/How-compatible-are-Tesla-Cars-in-India-1200x900.jpg",
+//           "description": ""
+//         },
+//         {
+//           "name": "helicopter",
+//           "picture": "https://s3-prod-europe.autonews.com/s3fs-public/styles/800x600/public/Tesla-Model%20S%20PLAID%20web.jpg",
+//           "description": "https://www.army-technology.com/wp-content/uploads/sites/3/2019/01/3l-image-UH-X-Utility-Helicopter.jpg"
+//         }
+//       ]
+//     },
+//     {
+//       "id": "1",
+//       "name": "Environment",
+//       "posts": [
+//         {
+//           "name": "Car",
+//           "picture": "https://gomechanic.in/blog/wp-content/uploads/2020/11/How-compatible-are-Tesla-Cars-in-India-1200x900.jpg",
+//           "description": ""
+//         },
+//         {
+//           "name": "helicopter",
+//           "picture": "https://s3-prod-europe.autonews.com/s3fs-public/styles/800x600/public/Tesla-Model%20S%20PLAID%20web.jpg",
+//           "description": "https://www.army-technology.com/wp-content/uploads/sites/3/2019/01/3l-image-UH-X-Utility-Helicopter.jpg"
+//         }
+//       ]
+//     }
+//   ]
+// }

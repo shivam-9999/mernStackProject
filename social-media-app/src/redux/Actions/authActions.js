@@ -15,6 +15,7 @@ export const registerUser = (userData, history) => (dispatch) => {
       })
     );
 };
+
 // Login - get user token
 export const loginUser = (userData) => (dispatch) => {
   axios
@@ -58,7 +59,8 @@ export const logoutUser = (history) => (dispatch) => {
   localStorage.removeItem("jwtToken");
   // Remove auth header for future requests
   setAuthToken(false);
+  history?.push("/");
   // Set current user to empty object {} which will set isAuthenticated to false
   dispatch(setCurrentUser(false));
-  history.push("/");
+ 
 };

@@ -12,7 +12,7 @@ import {
 
 const theme = createTheme({
 
-  
+  spacing: 8,
   typography: {
     button: {
       textTransform: "none",

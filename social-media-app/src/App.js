@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Homepage from "./component/pages/Homepage";
+import Homepage from "./pages/Homepage";
 import Login from "./component/login/Login";
 import SignUp from "./component/signup/SignUp";
-import Dashboard from "./component/pages/Dashboard";
+import Dashboard from "./pages/Dashboard";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./redux/Actions/authActions";

@@ -10,9 +10,9 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { styled } from "@mui/material/styles";
-import { green, brown, red } from "@mui/material/colors";
+import { green, brown } from "@mui/material/colors";
 import { useHistory } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 // import { GET_ERRORS, SET_CURRENT_USER, USER_LOADING } from "../../redux/type";
 import { registerUser } from "../../redux/Actions/authActions";
 import Nav from "../Nav";
@@ -57,7 +57,6 @@ const CssTextField = styled(TextField)({
 function SignUp() {
   const history = useHistory();
   const dispatch = useDispatch();
-  const state = useSelector((state) => state);
   const [_input, _setInput] = useState({ role: "user" });
   const [_invalidInput, _setInvalidInput] = useState({
     name: false,
@@ -162,7 +161,7 @@ function SignUp() {
             sx={{ mt: 3 }}
           >
             <Grid container spacing={2}>
-              <Grid item xs={6} spacing={2}>
+              <Grid container item xs={6}>
                 <CssTextField
                   // autoComplete="given-name"
                   name="name"
@@ -177,7 +176,7 @@ function SignUp() {
                   }
                 />
               </Grid>
-              <Grid item xs={6} spacing={2}>
+              <Grid container item xs={6} >
                 <FormControl fullWidth>
                   <InputLabel id="demo-simple-select-label">Role</InputLabel>
                   <CssSelectField

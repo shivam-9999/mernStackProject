@@ -1,21 +1,26 @@
 import React from "react";
 import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { useHistory } from "react-router";
 import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
+import { useSelector, useDispatch } from "react-redux";
+import { logoutUser } from "../redux/Actions/authActions";
 
 function Nav() {
   const history = useHistory();
-  const handleLogin = () => {
-    history.push("/login");
-  };
+  const dispatch = useDispatch();
 
-  const handleNewUser = () => {
-    history.push("/signup");
-  };
+  const userData = useSelector((state) => state.authReducer.user);
+  const isAuthenticated = useSelector(
+    (state) => state.authReducer.isAuthenticated
+  );
+  // console.log(isAuthenticated);
+  const handleLogin = () => (isAuthenticated ? "" : history.push("/login"));
+
+  const handleNewUser = () =>
+    isAuthenticated ? dispatch(logoutUser(history)) : history.push("/signup");
 
   return (
     <AppBar position="static" color="primary">
@@ -33,10 +38,10 @@ function Nav() {
           My Topics
         </Typography>
         <Button onClick={handleLogin} style={{ color: "white" }}>
-          Login
+          {isAuthenticated ? `Hello ${userData?.name}` : "Login"}
         </Button>
         <Button onClick={handleNewUser} style={{ color: "white" }}>
-          Signup
+          {isAuthenticated ? "Logout" : "Signup"}
         </Button>
       </Toolbar>
     </AppBar>
